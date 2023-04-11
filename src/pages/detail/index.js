@@ -1,20 +1,15 @@
 import { useLayoutEffect, useState } from 'react';
 import { Text, View, ScrollView, Pressable, Image, Modal, Share, StyleSheet } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native';
-
 import { Entypo, AntDesign, Feather } from '@expo/vector-icons';
-
 import { Ingredients } from '../../components/ingredients';
 import { Instructions } from '../../components/instructions';
-
 import { VideoView } from '../../components/video';
-
 import { isFavorite, saveFavorites, removeItem } from '../../utils/storage';
 
 export function Detail(){
   const route = useRoute();
   const navigation = useNavigation();
-
   const [showVideo, setShowVideo] = useState(false);
   const [favorite, setFavorite] = useState(false);
 
