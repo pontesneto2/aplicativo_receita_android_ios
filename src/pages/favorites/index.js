@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { Text, SafeAreaView, FlatList, StyleSheet } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
 import { FoodList } from '../../components/foodList'
-
 import { getFavorites } from '../../utils/storage';
 
 export function Favorites(){
@@ -32,7 +31,7 @@ export function Favorites(){
     <SafeAreaView style={styles.container}>
       <Text style={styles.title}>Receitas Favoritas</Text>
       {receipes.length === 0 && (
-        <Text>Você ainda não tem nenhuma receita salva.</Text>  
+        <Text style={styles.msg}>Você ainda não tem nenhuma receita salva.</Text>  
       )}
 
       <FlatList 
@@ -58,6 +57,11 @@ const styles = StyleSheet.create({
     title:{
       color: '#000',
       fontWeight: 'bold',
-      fontSize: 24,
+      fontSize: 25,
+    },
+    msg:{
+      color: '#ff0000',
+      fontSize: 16,
+      marginTop: 10,
     },
 })
